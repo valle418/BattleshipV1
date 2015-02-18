@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="textfield">Welcome</p>
+<p id="grid"></p>
+
+<script>
+
+var rows = 5;
+var col = 3;
+var text = "";
+var count = 0;
+
+//onclick='getElementById(\"textfield\").innerHTML=\"" + count + "\"'
+//'this.style.color = \"red\"'
+
+	for (i = 1; i <= rows; i++) { 
+		for (j = 1; j <= col; j++) { 
+			count += 1;
+			text += "<button id='" + count + "' type='button' onclick=buttonPress(" + count + ")  >Click Me!</button>";
+			
+		}
+		text += "<br>";
+	}
+	document.getElementById("grid").innerHTML = text;
+	
+	function buttonPress(id) {
+		document.getElementById(id).style.color = "red"; 
+		document.getElementById("textfield").innerHTML=id;
+	}
+	
+</script>
+</body>
+</html>
